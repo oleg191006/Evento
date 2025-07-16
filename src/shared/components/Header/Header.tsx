@@ -1,6 +1,6 @@
 import Link from "next/link";
 import Logo from "../Logo/Logo";
-import { routes } from "@/shared/constants/routes";
+import { headerRoutes } from "@/shared/constants/routes";
 
 const Header = () => {
   return (
@@ -8,7 +8,7 @@ const Header = () => {
       <Logo />
       <nav>
         <ul className="flex gap-x-4 text-sm">
-          {routes.map((route) => {
+          {headerRoutes.map((route) => {
             return (
               <li
                 key={route.path}
