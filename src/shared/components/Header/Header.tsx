@@ -1,12 +1,25 @@
 import Link from "next/link";
 import Logo from "../Logo/Logo";
+import { routes } from "@/shared/constants/routes";
 
 const Header = () => {
   return (
-    <header>
+    <header className="flex justify-between items-center border-b border-white/10 h-14 px-3 sm:px-9">
       <Logo />
-      <Link href="/">Home</Link>
-      <Link href="/events/all">All events</Link>
+      <nav>
+        <ul className="flex gap-x-4 text-sm">
+          {routes.map((route) => {
+            return (
+              <li
+                key={route.path}
+                className="text-white/50 hover:text-white transition"
+              >
+                <Link href={route.path}>{route.name}</Link>
+              </li>
+            );
+          })}
+        </ul>
+      </nav>
     </header>
   );
 };
