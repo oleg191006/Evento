@@ -1,4 +1,6 @@
+import EventsList from "@/shared/components/EventsList/EventsList";
 import H1 from "@/shared/components/H1/H1";
+import { EventoEvent } from "@/shared/lib/type";
 
 type EventsPageProps = {
   params: {
@@ -6,15 +8,23 @@ type EventsPageProps = {
   };
 };
 
-const EventsPage = ({ params }: EventsPageProps) => {
+const EventsPage = async ({ params }: EventsPageProps) => {
+  const response = await fetch(
+    "https://bytegrad.com/course-assets/projects/evento/api/events"
+  );
+
+  const events: EventoEvent[] = await response.json();
+
   const city = params.city;
+
   return (
     <main className="flex flex-col items-center py-24 px-[20px] min-h-[110vh]">
-      <H1>
+      <H1 className="28px">
         {city === "all" && "All Events"}
         {city !== "all" &&
           `Events in ${city.charAt(0).toUpperCase() + city.slice(1)}`}
       </H1>
+      <EventsList events={events} />
     </main>
   );
 };
