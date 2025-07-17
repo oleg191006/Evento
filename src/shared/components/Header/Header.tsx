@@ -8,7 +8,6 @@ import { motion } from "framer-motion";
 
 const Header = () => {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <header className="flex justify-between items-center border-b border-white/10 h-14 px-3 sm:px-9">
       <Logo />
