@@ -1,4 +1,4 @@
-import { EventoEvent } from "../type";
+import { EventoEvent } from "@prisma/client";
 
 export async function getEvent(slug: string) {
   const response = await fetch(

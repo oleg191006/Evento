@@ -1,5 +1,5 @@
 "use client";
-import { EventoEvent } from "@/shared/lib/type";
+import { EventoEvent } from "@prisma/client";
 import { motion, useScroll, useTransform } from "framer-motion";
 
 import Image from "next/image";

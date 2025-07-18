@@ -1,5 +1,4 @@
 import H1 from "@/shared/components/H1/H1";
-import { EventoEvent } from "@/shared/lib/type";
 import { getEvent } from "@/shared/lib/utils/getEvent";
 import { Metadata } from "next";
 import Image from "next/image";
