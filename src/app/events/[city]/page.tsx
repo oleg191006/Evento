@@ -31,7 +31,7 @@ const EventsPage = async ({ params, searchParams }: EventPageProps) => {
         {city === "all" && "All Events"}
         {city !== "all" && `Events in ${capitalize(city)}`}
       </H1>
-      <Suspense fallback={<Loading />}>
+      <Suspense key={city + page} fallback={<Loading />}>
         <EventsList city={city} page={+page} />
       </Suspense>
     </main>
