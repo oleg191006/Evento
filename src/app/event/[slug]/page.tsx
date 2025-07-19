@@ -9,6 +9,17 @@ type Props = {
   };
 };
 
+export async function generateStaticParams() {
+  return [
+    {
+      slug: "comedy-extravaganza",
+    },
+    {
+      slug: "dj-practice-session",
+    },
+  ];
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const slug = params.slug;
 
