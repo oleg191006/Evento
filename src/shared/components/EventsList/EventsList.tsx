@@ -9,7 +9,7 @@ type EventsListProps = {
 
 const EventsList = async ({ city, page = 1 }: EventsListProps) => {
   const { events, totalCount } = await getEvents(city, page);
-  console.log(events);
+
   const previousPath = page > 1 ? `/events/${city}?page=${page - 1}` : "";
   const nextPath =
     totalCount > 6 * page ? `/events/${city}?page=${page + 1}` : "";

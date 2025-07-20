@@ -8,7 +8,6 @@ export const getEvent = unstable_cache(async (slug: string) => {
       slug: slug,
     },
   });
-  console.log(event);
 
   if (!event) {
     return notFound();
