@@ -1,17 +1,18 @@
-import { EventoEvent } from "@prisma/client";
+import { unstable_cache } from "next/cache";
 import prisma from "./db";
 import { notFound } from "next/navigation";
 
-export async function getEvent(slug: string) {
+export const getEvent = unstable_cache(async (slug: string) => {
   const event = await prisma.eventoEvent.findUnique({
     where: {
       slug: slug,
     },
   });
+  console.log(event);
 
   if (!event) {
     return notFound();
   }
 
   return event;
-}
+});
